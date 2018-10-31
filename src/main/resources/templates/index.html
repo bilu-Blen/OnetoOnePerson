@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:each="person : ${persons}">
+        <h2 th:inline="text">Person identified by [[${person.ssn}]]</h2>
+
+        <ul>
+            <th:block th:object="${person.driversLicense}">
+                <li th:inline="text">Has a drivers license with the number: [[${person.driversLicense.numberDriversLicense}]] which has expiration date of [[*{year}]] and it is from the state of [[${location}]]</li>
+
+            </th:block>
+        </ul>
+
+    </div>
+</body>
+</html>
