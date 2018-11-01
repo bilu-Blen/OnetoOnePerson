@@ -10,7 +10,15 @@
 
         <ul>
             <th:block th:object="${person.driversLicense}">
-                <li th:inline="text">Has a drivers license with the number: [[${person.driversLicense.numberDriversLicense}]] which has expiration date of [[*{year}]] and it is from the state of [[${location}]]</li>
+                <li th:inline="text">Has a drivers license with the number: [[${person.driversLicense.numberDriversLicense}]] which has expiration date of [[*{year}]] and it is from the state of [[${location}]].</li>
+            </th:block>
+
+            <th:block th:object="${person.passport}">
+                <li th:inline="text"> Has a passport license with the number: [[*{passportNum}]] which has expiration date of [[*{expirationDate}]].</li>
+            </th:block>
+
+            <th:block th:object="${person.nationalId}">
+                <li th:inline="text"> Has a national Id with the number: [[*{nationalIdNum}]] which was issued on [[*{dateIssued}]]</li>
 
             </th:block>
         </ul>

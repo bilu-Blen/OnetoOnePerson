@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,7 @@ public class Passport {
     private long expirationDate;
 
     @OneToOne(mappedBy = "passport")
+    @JsonIgnore
     private Person person;
 
 

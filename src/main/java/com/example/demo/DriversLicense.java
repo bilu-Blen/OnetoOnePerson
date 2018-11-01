@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +14,9 @@ public class DriversLicense {
     private String location;
 
     @OneToOne(mappedBy = "driversLicense")
+    @JsonIgnore
     private Person person;
+
 
 
     public int getId() {
